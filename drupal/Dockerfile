@@ -11,6 +11,6 @@ RUN curl -so - "https://getcomposer.org/installer" | php && mv composer.phar /us
 # and drush
 RUN composer -q require drush/drush:6.* && ln -sf /var/sites/default/vendor/bin/drush /usr/local/bin/drush
 
-RUN drush dl drupal && mv drupal-*/ public/
+RUN rm -r public/ && drush dl drupal && mv drupal-*/ public/
 
-ADD config/ conf.d/
+ADD conf.d/ /var/sites/default/conf.d/
