@@ -1,18 +1,16 @@
-FROM maxexcloo/nginx-php
+FROM flemeur/nginx-php
 
 MAINTAINER Flemming Andersen <flemming@flamingcode.com>
 
-WORKDIR /data
+WORKDIR /var/sites/default
+ENV HOME /var/sites/default
 
 # Install composer
-RUN wget -qO - "https://getcomposer.org/installer" | php > /dev/null 2>&1
-RUN mv composer.phar /usr/local/bin/composer
+RUN curl -so - "https://getcomposer.org/installer" | php && mv composer.phar /usr/local/bin/composer
 
 # and drush
-RUN composer -q require drush/drush:6.*
-RUN ln -sf /data/vendor/bin/drush /usr/local/bin/drush
+RUN composer -q require drush/drush:6.* && ln -sf /var/sites/default/vendor/bin/drush /usr/local/bin/drush
 
-RUN drush dl drupal > /dev/null 2>&1
-RUN mv drupal-*/ /data/http
+RUN drush dl drupal && mv drupal-*/ public/
 
-ADD config /data/config
+ADD config/ conf.d/
