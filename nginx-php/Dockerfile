@@ -15,5 +15,9 @@ RUN rm /etc/nginx/sites-*/www && cd /etc/nginx/sites-enabled && ln -s /etc/nginx
 RUN mkdir -p /var/sites/default/conf.d /var/sites/default/public
 
 WORKDIR /var/sites/default
+ENV HOME /var/sites/default
+
+# Install composer
+RUN curl -so - "https://getcomposer.org/installer" | php && mv composer.phar /usr/local/bin/composer
 
 CMD ["/usr/bin/supervisord"]
