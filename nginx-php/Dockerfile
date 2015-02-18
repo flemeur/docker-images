@@ -18,6 +18,6 @@ WORKDIR /var/sites/default
 ENV HOME /var/sites/default
 
 # Install composer
-RUN curl -so - "https://getcomposer.org/installer" | php && mv composer.phar /usr/local/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 CMD ["/usr/bin/supervisord"]
