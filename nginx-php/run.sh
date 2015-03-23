@@ -16,5 +16,4 @@ if [[ "$APPLICATION_ENV" == "development" ]]; then
 	groupmod -o -g $GROUP www-data
 fi
 
-source /etc/apache2/envvars
-exec apache2 -D FOREGROUND
+exec /usr/bin/supervisord
