@@ -4,7 +4,6 @@ MAINTAINER Flemming Andersen <flemming@flamingcode.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 supervisor \
-libgd2-xpm \
 php5-fpm php5-cli php5-curl php5-gd php5-mcrypt php5-mysql php5-pgsql php5-sqlite \
 && apt-get clean
 
