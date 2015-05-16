@@ -4,7 +4,7 @@ MAINTAINER Flemming Andersen <flemming@flamingcode.com>
 
 RUN apt-get update && apt-get install -y \
 apache2 libapache2-mod-php5 \
-php5-curl php5-gd php5-mcrypt php5-mysql php5-pgsql php5-sqlite \
+php5 php5-curl php5-gd php5-mcrypt php5-mysql php5-pgsql php5-sqlite \
 && apt-get clean
 
 # Enable rewrite
@@ -18,7 +18,11 @@ ENV HOME /var/sites/default
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+RUN rm /etc/apache2/sites-available/* && rm /etc/apache2/sites-enabled/*
+
 COPY etc /etc
+
+RUN a2ensite default
 
 COPY run.sh /run.sh
 
