@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian
 
 MAINTAINER Flemming Andersen <flemming@flamingcode.com>
 
