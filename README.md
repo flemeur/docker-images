@@ -12,6 +12,3 @@ Installs nginx and serves from `/var/www` by default.
 
 Supervisor, nginx and php-fpm.
 
-## Drupal
-
-The Drupal image is based on the Nginx & PHP image and installs composer and drush.
