@@ -26,4 +26,7 @@ $cfg['DefaultLang'] = 'en';
 $cfg['ServerDefault'] = 1;
 $cfg['UploadDir'] = '';
 $cfg['SaveDir'] = '';
+
+// Remove restriction on exec time
+$cfg['ExecTimeLimit'] = 0;
 ?>
