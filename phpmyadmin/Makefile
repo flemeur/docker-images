@@ -1,6 +1,9 @@
-.PHONY: build
+.PHONY: build push
 
-NAME=flemeur/phpmyadmin
+NAME = flemeur/phpmyadmin
 
 build:
-	docker build -t ${NAME} .
+	docker build --pull -t $(NAME) .
+
+push:
+	docker push $(NAME)

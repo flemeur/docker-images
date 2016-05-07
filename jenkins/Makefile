@@ -1,6 +1,9 @@
-.PHONY: build
+.PHONY: build push
 
-NAME=flemeur/jenkins
+NAME = flemeur/jenkins
 
 build:
-	docker build -t ${NAME} .
+	docker build --pull -t $(NAME) .
+
+push:
+	docker push $(NAME)

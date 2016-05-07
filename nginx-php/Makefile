@@ -1,6 +1,9 @@
-.PHONY: build
+.PHONY: build push
 
-NAME=flemeur/nginx-php
+NAME = flemeur/nginx-php
 
 build:
-	docker build -t ${NAME} .
+	docker build --pull -t $(NAME) .
+
+push:
+	docker push $(NAME)
