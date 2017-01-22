@@ -16,8 +16,8 @@ $cfg['Servers'][$i]['port'] = '';
 $cfg['Servers'][$i]['socket'] = '';
 $cfg['Servers'][$i]['connect_type'] = 'tcp';
 $cfg['Servers'][$i]['auth_type'] = 'config';
-$cfg['Servers'][$i]['user'] = getenv('MYSQL_ENV_MYSQL_USER');
-$cfg['Servers'][$i]['password'] = getenv('MYSQL_ENV_MYSQL_PASSWORD');
+$cfg['Servers'][$i]['user'] = getenv('MYSQL_USER');
+$cfg['Servers'][$i]['password'] = getenv('MYSQL_PASSWORD');
 
 /* End of servers configuration */
 
