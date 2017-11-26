@@ -1,11 +1,18 @@
 FROM flemeur/nginx
 
-MAINTAINER Flemming Andersen <flemming@flamingcode.com>
+LABEL MAINTAINER="Flemming Andersen <flemming@flamingcode.com>"
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-supervisor \
-php5-fpm php5-cli php5-curl php5-gd php5-mcrypt php5-mysql php5-pgsql php5-sqlite \
-&& apt-get clean
+RUN apt-get update && \
+	apt-get install -y --no-install-recommends \
+	supervisor \
+	php-fpm \
+	php-cli \
+	php-curl \
+	php-gd \
+	php-mcrypt \
+	php-mysql \
+	php-pgsql && \
+	apt-get clean
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

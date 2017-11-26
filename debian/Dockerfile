@@ -1,6 +1,6 @@
 FROM debian
 
-MAINTAINER Flemming Andersen <flemming@flamingcode.com>
+LABEL maintainer="Flemming Andersen <flemming@flamingcode.com>"
 
 ENV DEBIAN_FRONTEND=noninteractive \
 	HISTFILE=/dev/null

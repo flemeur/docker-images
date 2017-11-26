@@ -1,11 +1,17 @@
 FROM flemeur/debian
 
-MAINTAINER Flemming Andersen <flemming@flamingcode.com>
+LABEL MAINTAINER="Flemming Andersen <flemming@flamingcode.com>"
 
 RUN apt-get update && apt-get install -y \
-apache2 libapache2-mod-php5 \
-php5 php5-curl php5-gd php5-mcrypt php5-mysql php5-intl \
-&& apt-get clean
+	apache2 \
+	libapache2-mod-php \
+	php \
+	php-curl \
+	php-gd \
+	php-mcrypt \
+	php-mysql \
+	php-intl && \
+	apt-get clean
 
 # Enable rewrite
 RUN a2enmod rewrite

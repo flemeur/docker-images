@@ -1,6 +1,6 @@
 FROM flemeur/debian
 
-MAINTAINER Flemming Andersen <flemming@flamingcode.com>
+LABEL MAINTAINER="Flemming Andersen <flemming@flamingcode.com>"
 
 RUN apt-get update && apt-get install -y --no-install-recommends nginx && apt-get clean
 
